@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+
+<div class="row">
+	<div class="col-md-6">
+		<h2>MARQUE</h2>
+		<h2>{{ article.name }}</h2> 
+		<div class="content">
+			<img src="http://placehold.it/350x150" alt="">
+			<a href="/catalog" class="btn.btn.primary">Retour aux articles</a>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<h2>Prix HT</h2>
+		<h2>{{ article.priceHt }}</h2>
+		<div class="content"></div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<h2>DESCRIPTIF</h2>
+		<h2>{{ article.description }}</h2>
+		<div class="content"></div>
+	</div>
+	<div>	
+		<button type="button" class="btn btn-primary">Modifier</button>
+		<button type="button" class="btn btn-danger">Supprimer</button>
+	</div>
+</div>
+	
+
+
+	
+	
+{% endblock %}
+
+

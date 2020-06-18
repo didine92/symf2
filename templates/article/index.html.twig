@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+	
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Catégorie</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Description</th>
+      <th scope="col">Prix TTC</th>
+	  <th scope="col">Date de Création</th>
+	  <th scope="col">Date de Modification</th>
+    </tr>
+  </thead>
+  <tbody>
+	{% for article in articles %}
+		<tr>
+			<td>{{article.catalog.name }}</td>
+			<td><a href="{{ path('articleId', {'id': article.id}) }}">{{article.name }}</a></td>			
+			<td>{{ article.description }}</td>
+			<td>{{ article.priceHt }}</td>
+			<td>{{ article.creationDate | date('d/m/Y H:i:s') }}</td>
+			<td>{{ article.updateDate | date('d/m/Y H:i:s') }}</td>
+		</tr>
+	{% endfor %}
+  </tbody>
+</table>	
+
+<a class="btn btn-primary btn-lg btn-block" href="{{ path('article_create') }}">Ajouter un article</a>  
+
+	
+{% endblock %}

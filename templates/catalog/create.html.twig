@@ -1,0 +1,29 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogue{% endblock %}
+
+{% block body %}
+	<h1>
+		Création d'une Catégorie
+	</h1>
+
+	{{ form_start(formCatalog) }}
+	<div class="form-group">
+		<label for="">Nom</label>
+		{{ form_widget(formCatalog.name) }}
+	</div>	
+	<div class="form-group">
+		<label for="">Description</label>
+		{{ form_widget(formCatalog.decription) }}
+	</div>	
+	
+	<button type="submit" class=" btn btn-success">CREER LA CATEGORIE</button>
+	
+	{{ form_end(formCatalog) }}
+	
+	
+		
+
+{% endblock %}
+
